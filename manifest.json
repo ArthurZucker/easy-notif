@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+    "name": "Notification Opener",
+    "version": "1.0",
+    "description": "Open notification links in new tabs",
+    "permissions": ["activeTab","tabs"],
+    "browser_action": {
+      "default_icon": "assets/notifications.png"
+    },
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "icons": {
+      "48": "assets/notifications.png"
+    }
+  }
