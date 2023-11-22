@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Extension Popup</title>
+
+    <!-- Add your styles here -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 10px;
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        #repoId {
+            width: 200px;
+            padding: 1px;
+            margin-bottom: 1px;
+        }
+
+        #saveButton {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #saveButton:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+    <h3>Select the repo id that you wish to redirect to</h3>
+
+    <label for="repoId">Repository ID:</label>
+    <input type="text" id="repoId" placeholder="Enter repository ID">
+
+    <button id="saveButton">Save</button>
+
+    <!-- Include your popup.js script at the end -->
+    <script src="options.js"></script>
+</body>
+</html>

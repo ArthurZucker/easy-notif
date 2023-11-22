@@ -3,14 +3,23 @@
   "name": "Notification Opener",
   "version": "0.1",
   "description": "Open notification links in new tabs",
-  "permissions": ["activeTab", "tabs", "scripting"],
+  "permissions": ["activeTab", "tabs", "scripting", "storage", "webRequest"],
+  "host_permissions": [
+    "*://*.github.com/*"
+  ],
   "action": {
-      "default_icon": "assets/notifications.png"
+      "default_icon": "assets/default.png"
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": false
   },
   "background": {
       "service_worker": "background.js"
   },
   "icons": {
-      "48": "assets/notifications.png"
+      "16": "assets/default.png",
+      "48": "assets/default.png",
+      "128": "assets/default.png"
   }
 }
