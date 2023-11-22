@@ -1,2 +1,2 @@
 archive:
-	zip -r extension.zip . -x "./.git/*" "Makefile" "*.zip" "*.md"
+	zip -r extension.zip . -x "./.git/*" "Makefile" "*.zip" "*.md" "*.webp"
