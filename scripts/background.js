@@ -12,7 +12,7 @@ function updateIcon(repoId) {
     // Extract repository name from repoId
     const [_, repoName] = repoId.split('/');
     // Set badge text and color based on the repository
-    let iconPath = `assets/${repoName}.png`;
+    let iconPath = `../assets/${repoName}.png`;
     // Set the badge text and background color
     // Fallback to default.png if the image does not exist
     try {
@@ -21,7 +21,7 @@ function updateIcon(repoId) {
     } catch (error) {
         console.error(`Error setting icon: ${error}`);
         // Fallback to default.png
-        chrome.action.setIcon({ path: { "16": "assets/default.png" } });
+        chrome.action.setIcon({ path: { "16": "../assets/default.png" } });
     }
 }
 
