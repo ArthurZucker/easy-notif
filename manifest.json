@@ -35,7 +35,7 @@
         "default": "Alt+Space",
         "mac": "Alt+Space"
       },
-      "description": "Execute GitHub Tip"
+      "description": "Switch tab and press done"
     }
   }
 }

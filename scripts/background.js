@@ -26,7 +26,7 @@ function updateIcon(repoId) {
 }
 
 chrome.action.setTitle({
-    title: "Press `shift + tab` to automatically press `done` and go to the previous notifications"
+    title: "Press `Alt + Space` to automatically press `done` and go to the previous notifications"
 });
 // Listen for changes in chrome.storage.sync to update the icon
 chrome.storage.onChanged.addListener(function (changes, namespace) {
@@ -65,7 +65,7 @@ chrome.runtime.onInstalled.addListener(function () {
                 chrome.tabs.sendMessage(currentTab.id, { command: "executeTip" });
                 console.log("Sent.")
                 chrome.tabs.query({ windowId: currentTab.windowId }, function (allTabs) {
-                    const nextTabIndex = (currentTab.index + 1) % allTabs.length;
+                    const nextTabIndex = (currentTab.index - 1) % allTabs.length;
                     chrome.tabs.update(allTabs[nextTabIndex].id, { active: true });
                 });
 
