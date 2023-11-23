@@ -3,7 +3,7 @@
   "name": "Notification Opener",
   "version": "0.1",
   "description": "Open notification links in new tabs",
-  "permissions": ["activeTab", "tabs", "scripting", "storage", "webRequest"],
+  "permissions": ["activeTab", "tabs", "scripting", "storage", "webRequest", "notifications"],
   "host_permissions": [
     "*://*.github.com/*"
   ],
@@ -15,11 +15,27 @@
     "open_in_tab": false
   },
   "background": {
-      "service_worker": "background.js"
+      "service_worker": "scripts/background.js"
   },
+  "content_scripts": [
+    {
+      "matches": ["*://github.com/*"],
+      "js": ["scripts/content.js"],
+      "run_at": "document_end"
+    }
+  ],
   "icons": {
       "16": "assets/default.png",
       "48": "assets/default.png",
       "128": "assets/default.png"
+  },
+  "commands": {
+    "executeTip": {
+      "suggested_key": {
+        "default": "Alt+Space",
+        "mac": "Alt+Space"
+      },
+      "description": "Execute GitHub Tip"
+    }
   }
 }
