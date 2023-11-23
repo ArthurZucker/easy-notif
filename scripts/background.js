@@ -37,10 +37,10 @@ chrome.storage.onChanged.addListener(function (changes, namespace) {
     }
 });
 
-chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
     console.log("Received message:", message, "sender", sender, "tab id", message.tabId);
     if (message.command === "closeTab" && sender.tab.id) {
-        chrome.tabs.remove(sender.tab.id, function() {
+        chrome.tabs.remove(sender.tab.id, function () {
             if (chrome.runtime.lastError) {
                 console.error("Error closing tab:", chrome.runtime.lastError);
             } else {
